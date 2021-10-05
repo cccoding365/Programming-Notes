@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>IE跳转到谷歌浏览器</title>
+  <script src="./custom-protocol-check.min.js"></script>
+</head>
+
+<body>
+  <ul>
+    <li>
+      <a href="https://www.baidu.com">打开百度（自己）</a>
+    </li>
+    <li>
+      <a href="ie:https://www.baidu.com">打开百度（IE）</a>
+    </li>
+    <li>
+      <a id="chrome" href="bychrome:https://www.baidu.com">打开百度（Chrome）</a>
+    </li>
+    <li>
+      <a href="javascript:test()">测试bychrome支持</a>
+    </li>
+  </ul>
+</body>
+<script type="text/javascript">
+  window.test = function () {
+    window.customProtocolCheck("bychrome:https://www.baidu.com",
+      function () {
+        alert("无法打开bychrome:");
+      },
+      function () {
+        alert("可以打开bychrome:");
+      }
+    );
+  };
+</script>
+
+</html>

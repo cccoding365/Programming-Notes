@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./custom-protocol-check.min.js"></script>
+    <script type="text/javascript">
+        window.test = function() {
+            window.customProtocolCheck("ie:https://www.baidu.com", 
+                function(){
+                    alert("无法打开ie:");
+                },
+                function(){
+                    alert("可以打开ie:");
+                }
+            );
+        };
+    </script>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="http://www.baidu.com?id=1&cd=2">打开百度</a>
+        </li>
+        <li>
+            <a href="ie:https://www.baidu.com?id=1&cd=2">打开百度（IE）</a>
+        </li>
+        <li>
+            <a href="ie:https://oa.cmic.chinamobile.com/?token=">打开中移老系统（IE）</a>
+        </li>
+        <li>
+            <a href="javascript:test()">测试ie支持</a>
+        </li>
+    </ul>
+</body>
+</html>

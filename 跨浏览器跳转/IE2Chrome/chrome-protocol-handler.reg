@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Classes\bychrome]
+"URL Protocol"="\"\""
+@="\"URL:Chrome Protocol\""
+
+[HKEY_CURRENT_USER\Software\Classes\bychrome\DefaultIcon]
+@="\"chrome.exe,1\""
+
+[HKEY_CURRENT_USER\Software\Classes\bychrome\shell]
+
+[HKEY_CURRENT_USER\Software\Classes\bychrome\shell\open]
+
+[HKEY_CURRENT_USER\Software\Classes\bychrome\shell\open\command]
+@="cmd /c set myvar=%1 & call set myvar=%%myvar:bychrome:=%% & call \"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\" %%myvar%% & exit /B"
